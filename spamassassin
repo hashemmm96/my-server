@@ -17,13 +17,14 @@ ENABLED=1
 # make sure --max-children is not set to anything higher than 5,
 # unless you know what you're doing.
 
-OPTIONS="--create-prefs --max-children 2 --username spamd -H ${SAHOME} -s ${SAHOME}spamd.log"
+SPAMD_HOME="/home/spamd/"
+OPTIONS="--create-prefs --max-children 5 --username spamd --helper-home-dir ${SPAMD_HOME} -s ${SPAMD_HOME}spamd.log"
 
 # Pid file
 # Where should spamd write its PID to file? If you use the -u or
 # --username option above, this needs to be writable by that user.
 # Otherwise, the init script will not be able to shut spamd down.
-PIDFILE="/var/run/spamd.pid"
+PIDFILE="${SPAMD_HOME}spamd.pid"
 
 # Set nice level of spamd
 #NICE="--nicelevel 15"
@@ -33,4 +34,3 @@ PIDFILE="/var/run/spamd.pid"
 # spamassassin's rules on a nightly basis
 CRON=1
 
-SAHOME="/var/log/spamassassin/"

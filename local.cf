@@ -15,7 +15,7 @@ rewrite_header Subject *****SPAM _SCORE_ *****
 #   Save spam messages as a message/rfc822 MIME attachment instead of
 #   modifying the original message (0: off, 2: use text/plain instead)
 #
-# report_safe 1
+report_safe 0
 
 
 #   Set which networks or hosts are considered 'trusted' by your mail
@@ -51,6 +51,10 @@ bayes_auto_learn 1
 # bayes_ignore_header X-Spam-Flag
 # bayes_ignore_header X-Spam-Status
 
+skip_rbl_checks	0
+use_razor2 0
+use_dcc	0
+use_pyzor 0
 
 #   Whether to decode non- UTF-8 and non-ASCII textual parts and recode
 #   them to UTF-8 before the text is given over to rules processing.
