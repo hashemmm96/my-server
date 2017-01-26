@@ -1,7 +1,7 @@
 # my-server
 My home server's configuration. Contains the configuration files for postfix, dovecot, spamassassin, opendkim and nginx.
 
-# File locations
+### File locations (for own reference)
 /etc/postfix/main.cf, master.cf
 
 /etc/dovecot/dovecot.conf
