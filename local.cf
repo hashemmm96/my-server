@@ -53,7 +53,7 @@ bayes_auto_learn 1
 
 skip_rbl_checks	0
 use_razor2 0
-use_dcc	0
+#use_dcc	0
 use_pyzor 0
 
 #   Whether to decode non- UTF-8 and non-ASCII textual parts and recode
