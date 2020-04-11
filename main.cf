@@ -23,6 +23,7 @@ smtp_tls_security_level=may
 smtp_tls_loglevel=1
 smtpd_tls_loglevel=1
 smtpd_tls_protocols = !SSLv2, !SSLv3
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated reject_unauth_destination
 
 local_recipient_maps = proxy:unix:passwd.byname $alias_maps
 
@@ -33,3 +34,5 @@ milter_default_action = accept
 # Comma separated, add spam filters here
 smtpd_milters = inet:localhost:12301
 non_smtpd_milters = inet:localhost:12301
+
+spamassassin_destination_recipient_limit = 1
